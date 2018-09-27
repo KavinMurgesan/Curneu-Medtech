@@ -7,17 +7,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class getticket extends AppCompatActivity {
-    Button getTicket;
+public class addstation extends AppCompatActivity {
+    Button registerStation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.getticket);
-        getTicket = (Button)findViewById(R.id.button2);
-        getTicket.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.addstation);
+        registerStation= (Button)findViewById(R.id.button4);
+        registerStation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getticket.this,"total fare is: ",Toast.LENGTH_LONG).show();
+                Toast.makeText(addstation.this,"station registered successfully",Toast.LENGTH_LONG).show();
             }
         });
 

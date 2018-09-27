@@ -12,12 +12,13 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-Button gettic;
+Button gettic,addsta;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
       gettic = (Button)findViewById(R.id.button);
+      addsta= (Button)findViewById(R.id.button3);
       gettic.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
@@ -25,6 +26,13 @@ Button gettic;
               startActivity(i);
           }
       });
+        addsta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in=new Intent(MainActivity.this,addstation.class);
+                startActivity(in);
+            }
+        });
 
     }
 
