@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "258523011700",
+    "firebase_url": "https://curneu-fc4b3.firebaseio.com",
+    "project_id": "curneu-fc4b3",
+    "storage_bucket": "curneu-fc4b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258523011700:android:908a179503147223",
+        "android_client_info": {
+          "package_name": "com.example.kavin.curneu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258523011700-6omf2kb3ih49vl4h0larms3r4g8uj1na.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAK_Ys36w1tCYlZQ8g8yrEpI7Z52YPUZu0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
