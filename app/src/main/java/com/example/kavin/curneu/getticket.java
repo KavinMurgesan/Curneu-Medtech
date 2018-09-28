@@ -24,16 +24,21 @@ public class getticket extends AppCompatActivity {
     Button getTicket;
     Spinner from, to;
     int fare,stops;
-    DatabaseReference databaseReference;
+    EditText uname,uno;
+    String usename,useno;
+    DatabaseReference databaseReference,ref;
     List<String> stationlists;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.getticket);
         getTicket = (Button)findViewById(R.id.button2);
+        uname=(EditText)findViewById(R.id.editText3);
+        uno=(EditText)findViewById(R.id.editText4);
         from=(Spinner)findViewById(R.id.spinner);
         to=(Spinner)findViewById(R.id.spinner2);
         databaseReference = FirebaseDatabase.getInstance().getReference("stations");;
+        ref = FirebaseDatabase.getInstance().getReference("users");;
         stationlists=new ArrayList<>();
         getTicket.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,8 +69,26 @@ public class getticket extends AppCompatActivity {
                     }
 
 
-                    Toast.makeText(getticket.this,"total fare is: "+fare,Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getticket.this,"total fare is: "+fare,Toast.LENGTH_LONG).show();
                 }
+                Toast.makeText(getticket.this,"total fare is: "+fare,Toast.LENGTH_LONG).show();
+
+               usename=uname.getText().toString();
+                useno=uno.getText().toString();
+                String id=ref.push().getKey();
+                ticket ticket = new ticket(id,usename,useno,fare);
+                ref.child(id).setValue(ticket);
+                Toast.makeText(getticket.this,"the receipt of the ticket:\n\n User Name ="+usename+"\n From Location Rs.="+fromst+"\nTo Location="+tost+"\nTicket Fare Rs.="+fare,Toast.LENGTH_LONG).show();
+
+                Toast.makeText(getticket.this,"user data stored in database",Toast.LENGTH_LONG).show();
+                uname.setText("");
+                uno.setText("");
+                fare=0;
+
+
+
+
+
 
             }
 

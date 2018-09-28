@@ -32,7 +32,7 @@ public class addstation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.addstation);
-        databaseReference = FirebaseDatabase.getInstance().getReference("stations");;
+        databaseReference = FirebaseDatabase.getInstance().getReference("stations");
         listViewstation = (ListView)findViewById(R.id.liststation);
         sname=(EditText)findViewById(R.id.editText);
         sno=(EditText)findViewById(R.id.editText2);
