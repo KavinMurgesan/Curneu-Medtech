@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import java.util.List;
 public class getticket extends AppCompatActivity {
     Button getTicket;
     Spinner from, to;
+    int fare,stops;
     DatabaseReference databaseReference;
     List<String> stationlists;
     @Override
@@ -39,8 +41,34 @@ public class getticket extends AppCompatActivity {
 
                 String fromst=from.getSelectedItem().toString();
                 String tost=to.getSelectedItem().toString();
-                Toast.makeText(getticket.this,"total fare is: "+fromst+tost,Toast.LENGTH_LONG).show();
+                int selfrom=from.getSelectedItemPosition()+1;
+                int selto=to.getSelectedItemPosition()+1;
+                stops=selfrom-selto;
+                if (selfrom==selto){
+                    Toast.makeText(getticket.this,"choose correct destination "+fare,Toast.LENGTH_LONG).show();
+                }
+                else if(stops == 10){
+                    fare=18;
+                }
+                else{
+
+                    while(stops!=0){
+                        if(stops<=3){
+                            fare+=10;
+                            break;
+                        }
+                        else{
+                            stops = stops-3;
+                            fare+=10;
+                        }
+                    }
+
+
+                    Toast.makeText(getticket.this,"total fare is: "+fare,Toast.LENGTH_LONG).show();
+                }
+
             }
+
         });
 
     }
