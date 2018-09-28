@@ -39,6 +39,7 @@ public class addstation extends AppCompatActivity {
         registerStation= (Button)findViewById(R.id.button4);
         stationlists=new ArrayList<>();
 
+    // to register a station
         registerStation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,6 +57,7 @@ public class addstation extends AppCompatActivity {
 
     }
 
+    //to get list of station to help admin to check the list of stations already added
     @Override
     protected void onStart() {
         super.onStart();

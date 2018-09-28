@@ -40,6 +40,8 @@ public class getticket extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("stations");;
         ref = FirebaseDatabase.getInstance().getReference("users");;
         stationlists=new ArrayList<>();
+
+        //getting location details for calculating fare
         getTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,12 +66,12 @@ public class getticket extends AppCompatActivity {
                         }
                         else{
                             stops = stops-3;
-                            fare+=10;
+                            fare+=5;
                         }
                     }
 
 
-                    //Toast.makeText(getticket.this,"total fare is: "+fare,Toast.LENGTH_LONG).show();
+
                 }
                 Toast.makeText(getticket.this,"total fare is: "+fare,Toast.LENGTH_LONG).show();
 
@@ -95,6 +97,8 @@ public class getticket extends AppCompatActivity {
         });
 
     }
+
+    //to display station names in spinner from firebase database
     @Override
     protected void onStart() {
         super.onStart();

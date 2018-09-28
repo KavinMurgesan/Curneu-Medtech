@@ -19,6 +19,8 @@ Button gettic,addsta;
         setContentView(R.layout.activity_main);
       gettic = (Button)findViewById(R.id.button);
       addsta= (Button)findViewById(R.id.button3);
+
+      //to navigate to "get ticket" screen
       gettic.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
@@ -26,6 +28,8 @@ Button gettic,addsta;
               startActivity(i);
           }
       });
+
+        //to navigate to "add station" screen
         addsta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
