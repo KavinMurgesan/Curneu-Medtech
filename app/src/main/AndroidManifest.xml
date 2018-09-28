@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".getticket"></activity>
         <activity android:name=".addstation"></activity>
+
     </application>
 
 </manifest>
